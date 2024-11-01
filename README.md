@@ -1,2 +1,0 @@
-# ecommersc-store
-ecommerce  web
