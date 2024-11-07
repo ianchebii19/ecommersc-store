@@ -1,8 +1,8 @@
 
-import CommonForm from "@/components/ui/common/form";
+import CommonForm from "@/components/common/form";
 import { useToast } from "@/components/ui/use-toast";
 import { registerFormControls } from "@/config";
-import { registerUser } from "@/store/auth-slice";
+import { registerUser } from "@/store/authSlice";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
@@ -44,6 +44,7 @@ function AuthRegister() {
         <h1 className="text-3xl font-bold tracking-tight text-foreground">
           Create new account
         </h1>
+        
         <p className="mt-2">
           Already have an account
           <Link

@@ -1,8 +1,9 @@
 
+
 import CommonForm from "@/components/common/form";
 import { useToast } from "@/components/ui/use-toast";
 import { loginFormControls } from "@/config";
-import { loginUser } from "@/store/auth-slice";
+import { loginUser } from "@/store/authSlice";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
@@ -44,7 +45,7 @@ function AuthLogin() {
           Don't have an account
           <Link
             className="font-medium ml-2 text-primary hover:underline"
-            to="/auth/register"
+            to="/auth/signup"
           >
             Register
           </Link>
@@ -57,6 +58,7 @@ function AuthLogin() {
         setFormData={setFormData}
         onSubmit={onSubmit}
       />
+      
     </div>
   );
 }

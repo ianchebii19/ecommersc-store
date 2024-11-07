@@ -3,6 +3,18 @@ const mongoose = require('mongoose');
 const cookieParser = require('cookie-parser');
 const cors = require('cors');
 const dotenv = require('dotenv');
+const authRouter = require("./routes/auth/authRoutes.js");
+/*const adminProductsRouter = require("./routes/admin/products-routes");
+const adminOrderRouter = require("./routes/admin/order-routes");
+
+const shopProductsRouter = require("./routes/shop/products-routes");
+const shopCartRouter = require("./routes/shop/cart-routes");
+const shopAddressRouter = require("./routes/shop/address-routes");
+const shopOrderRouter = require("./routes/shop/order-routes");
+const shopSearchRouter = require("./routes/shop/search-routes");
+const shopReviewRouter = require("./routes/shop/review-routes");
+
+const commonFeatureRouter = require("./routes/common/feature-routes");*/
 
 dotenv.config(); // Load environment variables
 
@@ -12,7 +24,7 @@ mongoose.connect(process.env.MONGO_URL)
   .catch(err => console.error('MongoDB connection error:', err));
 
 const app = express();
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 8000;
 
 // Middleware
 app.use(express.json());
@@ -30,7 +42,7 @@ app.use(cors({
     ],
     credentials: true
 }));
-
+app.use("/api/auth", authRouter);
 // Example route (add more routes here as needed)
 app.get('/', (req, res) => {
   res.send('API is running');
