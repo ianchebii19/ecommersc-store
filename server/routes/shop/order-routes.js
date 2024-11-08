@@ -5,7 +5,7 @@ const {
   getAllOrdersByUser,
   getOrderDetails,
   capturePayment,
-} = require("../../controllers/shop/order-controller");
+} = require("../../controlers/shop/order-controllers");
 
 const router = express.Router();
 
